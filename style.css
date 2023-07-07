@@ -1,6 +1,9 @@
 * {
     font-family: "Noto Sans";
 }
+div {
+    background-color: burlywood;
+}
 iframe {
     background-image: url(bagels.png);
     width: 900px;
