@@ -61,12 +61,15 @@ function startGame() {
     var input = document.createElement("input");
     var button = document.createElement("input");
     var div = document.createElement("div");
+    var h2 = document.createElement("h2");
     input.value = "Enter guess";
     input.type = "text";
     button.value = "Submit";
     button.type = "button";
     button.onclick = submit;
+    h2.innerHTML = "Guess results";
     body.appendChild(input);
     body.appendChild(button);
     body.appendChild(div);
+    div.appendChild(h2);
 }
