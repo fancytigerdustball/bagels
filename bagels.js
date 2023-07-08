@@ -33,18 +33,18 @@ function startGame() {
             }
             // Is there a way to shorten this? (like a Python f-string)
             response = "#" + tries + "  " + guess + ":" + bagels + fermi + pico;
+            var relement = document.createElement("p");
+            if(fermi == " fermi fermi fermi") {response += ". Perfect!";}
+            else {
+                if(tries == 10) {response += ". You ran out of tries. The secret number was: " + digits;}
+            }
+            relement.innerHTML = response;
+            if(tries < 11) {div.appendChild(relement);}
         }
         else {
             tries--;
-            response = "guess must be 3 numbers long.";
+            alert("guess must be 3 numbers long.");
         }
-        var relement = document.createElement("p");
-        if(fermi == " fermi fermi fermi") {response += ". Perfect!";}
-        else {
-            if(tries == 10) {response += ". You ran out of tries. The secret number was: " + digits;}
-        }
-        relement.innerHTML = response;
-        if(tries < 11) {div.appendChild(relement);}
     }
     var body = document.getElementById("body");
     var button = document.getElementById("button");
@@ -64,6 +64,7 @@ function startGame() {
     var input = document.createElement("input");
     var button = document.createElement("input");
     var div = document.createElement("div");
+    var blank = document.createElement("div");
     var h2 = document.createElement("h2");
     iframe.src = "rules.html";
     input.value = "Enter guess";
@@ -73,10 +74,12 @@ function startGame() {
     button.type = "button";
     button.onclick = submit;
     button.id = "gameButton";
+    blank.id = "blank";
     h2.innerHTML = "Guess results";
     body.appendChild(iframe);
     body.appendChild(input);
     body.appendChild(button);
     body.appendChild(div);
+    body.appendChild(blank);
     div.appendChild(h2);
 }
