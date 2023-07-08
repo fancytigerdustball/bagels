@@ -55,7 +55,8 @@ function startGame() {
         var number = Math.floor(Math.random() * 10);
         if(inDigits(number)) {i--;}
         else {
-            if(number != 0) {digits.push(number)};
+            if(number != 0) {digits.push(number);}
+            else {i--;}
         }
     }
     
