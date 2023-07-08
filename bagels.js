@@ -54,7 +54,9 @@ function startGame() {
     for(var i = 0; i < 3; i++) {
         var number = Math.floor(Math.random() * 10);
         if(inDigits(number)) {i--;}
-        else {digits.push(number);}
+        else {
+            if(number != 0) {digits.push(number)};
+        }
     }
     
     body.removeChild(button);
