@@ -58,16 +58,21 @@ function startGame() {
     }
     
     body.removeChild(button);
+    var iframe = document.createElement("iframe");
     var input = document.createElement("input");
     var button = document.createElement("input");
     var div = document.createElement("div");
     var h2 = document.createElement("h2");
+    iframe.src = "rules.html";
     input.value = "Enter guess";
     input.type = "text";
+    input.id = "gameInput";
     button.value = "Submit";
     button.type = "button";
     button.onclick = submit;
+    button.id = "gameButton";
     h2.innerHTML = "Guess results";
+    body.appendChild(iframe);
     body.appendChild(input);
     body.appendChild(button);
     body.appendChild(div);
