@@ -30,3 +30,6 @@ h3 {
 #gameButton {
     margin-left: 20px
 }
+#blank {
+    background-image: url("bagels.png");
+}
